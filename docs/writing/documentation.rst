@@ -93,9 +93,31 @@ Reference`_ should help you familiarize yourself with its syntax.
 Code Documentation Advice
 -------------------------
 
+
+Commenting Sections of Code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Comments clarify the code and they are added with purpose of making the
-code easier to understand. In Python, comments begin with a hash
-(number sign) (``#``).
+code easier to understand. In Python, comments begin with a hash (also known
+as number or pound sign) (''#'').
+
+*Do not use triple-quote strings to comment code*. This is not a good
+practice, because line-oriented command-line tools such as grep will
+not be aware that the commented code is inactive. It is better to add
+hashes at the proper indentation level for every commented line. Your
+editor probably has the ability to do this easily, and it is worth
+learning the comment/uncomment toggle.
+
+In general, follow the comment section of :pep:`8#comments` (the "Python Style
+Guide").
+
+
+Docstrings and Magic
+~~~~~~~~~~~~~~~~~~~~
+
+Some tools use docstrings to embed more-than-documentation behavior,
+such as unit test logic. Those can be nice, but you won't ever go
+wrong with vanilla "here's what this does."
 
 .. _docstring-ref:
 
@@ -107,25 +129,6 @@ In Python, *docstrings* describe modules, classes, and functions:
         """Returns the square root of self times self."""
         ...
 
-In general, follow the comment section of :pep:`8#comments` (the "Python Style
-Guide").
-
-Commenting Sections of Code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Do not use triple-quote strings to comment code*. This is not a good
-practice, because line-oriented command-line tools such as grep will
-not be aware that the commented code is inactive. It is better to add
-hashes at the proper indentation level for every commented line. Your
-editor probably has the ability to do this easily, and it is worth
-learning the comment/uncomment toggle.
-
-Docstrings and Magic
-~~~~~~~~~~~~~~~~~~~~
-
-Some tools use docstrings to embed more-than-documentation behavior,
-such as unit test logic. Those can be nice, but you won't ever go
-wrong with vanilla "here's what this does."
 
 Docstrings versus Block comments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
